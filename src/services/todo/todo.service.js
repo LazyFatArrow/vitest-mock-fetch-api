@@ -14,9 +14,10 @@ export async function createTodo({ token, todo }) {
   return (
     await fetch(BASE_URL, {
       method: 'POST',
-      body: todo,
+      body: JSON.stringify(todo),
       headers: {
         Authorization: `Bearer ${token}`,
+        'Content-Type': 'application/json',
       },
     })
   ).json()

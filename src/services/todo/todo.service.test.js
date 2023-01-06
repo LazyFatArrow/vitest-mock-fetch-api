@@ -56,9 +56,10 @@ describe('Todo Service', () => {
       'https://imaginary-todos-api.com/api/v1/todos',
       {
         method: 'POST',
-        body: todo,
+        body: JSON.stringify(todo),
         headers: {
           Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
         },
       },
     )
